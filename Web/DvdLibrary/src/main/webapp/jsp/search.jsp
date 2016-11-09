@@ -20,7 +20,7 @@
                 <ul class="nav nav-tabs">
                     <li role="presentation"><a href="${pageContext.request.contextPath}/home">Home</a></li>
                     <li role="presentation" class="active"><a href="${pageContext.request.contextPath}/search">Search</a></li>
-                    <li role="presentation"><a href="${pageContext.request.contextPath}/stats">Stats</a></li>
+                    <!--<li role="presentation"><a href="${pageContext.request.contextPath}/stats">Stats</a></li>-->
 <!--                    <li role="presentation">
                         <a href="${pageContext.request.contextPath}/displayDvdListNoAjax">
                             DVD List (No Ajax)
@@ -94,13 +94,12 @@
                                 <input type="radio" name="mpaaRating" value="NR" id="NR">NR<br>
                             </div>
                         </div>
-<!--                        <div class="form-group">
+                        <div class="form-group">
                             <label for="search-date" class="col-md-4 control-label">Release Date: </label>
                             <div class="col-md-8">
                                 <input type="date" name="releaseDate" id="search-releaseDate">
-                                <c:if test="${''.equals(error)}">${error}</c:if>
                                 </div>
-                            </div>-->
+                            </div>
                             <div class="form-group">
                                 <div class="col-md-offset-4 col-md-8">
                                     <button type="submit"

@@ -39,6 +39,7 @@ public class DvdLibraryDaoInMemImpl implements DvdLibraryDao {
         String mpaaRatingCriteria = criteria.get(SearchTerm.MPAA_RATING);
         String directorCriteria = criteria.get(SearchTerm.DIRECTOR);
         String studioCriteria = criteria.get(SearchTerm.STUDIO);
+        String dateCriteria = criteria.get(SearchTerm.RELEASE_DATE);
         
         // Declare all the predicate conditions
         // Used for filtering during stream
@@ -46,6 +47,7 @@ public class DvdLibraryDaoInMemImpl implements DvdLibraryDao {
         Predicate<Dvd> mpaaRatingMatches;
         Predicate<Dvd> directorMatches;
         Predicate<Dvd> studioMatches;
+        Predicate<Dvd> dateMatches;
         
         // Placeholder predicate always returns true. 
         // Used for empty search terms.
@@ -69,6 +71,9 @@ public class DvdLibraryDaoInMemImpl implements DvdLibraryDao {
         studioMatches = (studioCriteria == null || studioCriteria.isEmpty())
                 ? truePredicate
                 : c -> c.getStudio().equalsIgnoreCase(studioCriteria);
+        dateMatches = (dateCriteria == null || dateCriteria.isEmpty())
+                ? truePredicate
+                : c -> c.getDate().equalsIgnoreCase(dateCriteria);
         
         // Return list of Dvds that match criteria. 
         // Stream over dvdMap and filter with and.
@@ -77,6 +82,7 @@ public class DvdLibraryDaoInMemImpl implements DvdLibraryDao {
                 .filter(titleMatches
                     .and(studioMatches)
                     .and(directorMatches)
+                    .and(dateMatches)
                     .and(mpaaRatingMatches))
                 .collect(Collectors.toList());
     }

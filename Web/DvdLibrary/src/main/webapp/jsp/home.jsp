@@ -20,12 +20,12 @@
                 <ul class="nav nav-tabs">
                     <li role="presentation" class="active"><a href="${pageContext.request.contextPath}/home">Home</a></li>
                     <li role="presentation"><a href="${pageContext.request.contextPath}/search">Search</a></li>
-                    <li role="presentation"><a href="${pageContext.request.contextPath}/stats">Stats</a></li>
-<!--                    <li role="presentation">
-                        <a href="${pageContext.request.contextPath}/displayDvdListNoAjax">
-                            DVD List (No Ajax)
-                        </a>
-                    </li>-->
+                    <!--<li role="presentation"><a href="${pageContext.request.contextPath}/stats">Stats</a></li>-->
+                    <!--                    <li role="presentation">
+                                            <a href="${pageContext.request.contextPath}/displayDvdListNoAjax">
+                                                DVD List (No Ajax)
+                                            </a>
+                                        </li>-->
                 </ul> 
             </div>
             <div class ="row">
@@ -110,13 +110,14 @@
                                 </div>
                             </div>
                         </form>
+                        <div id="validationErrors"/>
                     </div>
                 </div>
 
             </div>
-            <%@include file="detailsEditModalFragment.jsp"%>
-            <!-- Placed at the end of the document so the pages load faster -->
-            <script src="${pageContext.request.contextPath}/js/jquery-2.2.4.min.js"></script>
+        <%@include file="detailsEditModalFragment.jsp"%>
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="${pageContext.request.contextPath}/js/jquery-2.2.4.min.js"></script>
         <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
         <script src="${pageContext.request.contextPath}/js/dvdList.js"></script>
     </body>

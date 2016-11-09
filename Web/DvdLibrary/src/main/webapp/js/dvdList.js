@@ -30,7 +30,14 @@ $(document).ready(function () {
             $("#G").prop('checked', true);
             $('#add-releaseDate').val('');
             $('#add-user-note').val('');
+            $('#validationErrors').empty();
             loadDvds();
+        }).error(function (data, status) {
+            $('#validationErrors').empty();
+            $.each(data.responseJSON.fieldErrors, function (index, validationError) {
+                var errorDiv = $('#validationErrors');
+                errorDiv.append(validationError.message).append($('<br>'));
+            });
         });
     });
 
