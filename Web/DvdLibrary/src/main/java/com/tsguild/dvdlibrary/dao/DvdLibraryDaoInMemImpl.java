@@ -1,6 +1,7 @@
 
 package com.tsguild.dvdlibrary.dao;
 
+import com.tsguild.dvdlibrary.dto.DirectorMovieCounts;
 import com.tsguild.dvdlibrary.dto.Dvd;
 import java.util.HashMap;
 import java.util.List;
@@ -101,6 +102,11 @@ public class DvdLibraryDaoInMemImpl implements DvdLibraryDao {
     @Override
     public void removeDvd(int dvdId) {
         dvdMap.remove(dvdId);
+    }
+
+    @Override
+    public List<DirectorMovieCounts> getDirectorMovieCounts() {
+        throw new UnsupportedOperationException("Not supported yet."); // TODO: getDirectorMovieCounts
     }
 
 }

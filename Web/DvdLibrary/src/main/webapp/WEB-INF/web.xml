@@ -69,5 +69,8 @@
         </listener-class>
     </listener>
   
+    <error-page>
+        <location>/error</location>
+    </error-page> 
 </web-app>
 

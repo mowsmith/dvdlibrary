@@ -4,6 +4,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Objects;
 import javax.validation.constraints.NotNull;
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 
 /**
@@ -13,14 +14,18 @@ import org.hibernate.validator.constraints.NotBlank;
 public class Dvd {
 
     @NotBlank(message = "Title can not be empty.")
+    @Length(min = 2, max = 50, message = "Title must between 2 and 50 characters in length.")
     private String title;
     private String rating;
     @NotNull(message = "Rating can not be empty.")
     private MpaaRating mpaaRating;
+    @Length(min = 2, max = 50, message = "Director must between 2 and 50 characters in length.")
     @NotBlank(message = "Director can not be empty.")
     private String director;
+    @Length(min = 2, max = 50, message = "Studio must between 2 and 50 characters in length.")
     @NotBlank(message = "Studio can not be empty.")
     private String studio;
+    @Length(min = 2, max = 200, message = "User Note must between 2 and 200 characters in length.")
     private String userNote;
     private int id;
     private String date;
@@ -70,9 +75,9 @@ public class Dvd {
     }
 
     public void setRating(String rating) {
-        
+
         this.rating = rating;
-        
+
         switch (rating) {
             case "G":
                 mpaaRating = MpaaRating.G;
@@ -136,7 +141,7 @@ public class Dvd {
     public void setDate(String date) {
 
         this.date = date;
-        
+
         String[] stringDateArr = date.split("-");
         int[] dateArr = new int[3];
 
