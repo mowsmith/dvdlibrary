@@ -75,7 +75,7 @@ public class DvdLibraryDaoTest {
     }
 
     @Test
-    public void addUpdateContact() {
+    public void addUpdateDvd() {
 
         // Create new dvd
         Dvd dvd = new Dvd();
@@ -98,7 +98,7 @@ public class DvdLibraryDaoTest {
     }
 
     @Test
-    public void getAllContacts() {
+    public void getAllDvds() {
 
         // Create new dvd
         Dvd dvd = new Dvd();
@@ -126,7 +126,7 @@ public class DvdLibraryDaoTest {
     }
 
     @Test
-    public void searchContacts() {
+    public void searchDvds() {
         // Create new dvd
         Dvd dvd = new Dvd();
         dvd.setTitle("Cat Movie");
